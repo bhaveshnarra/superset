@@ -50,6 +50,9 @@ class CreateSSHTunnelCommand(BaseCommand):
         return tunnel
 
     def validate(self) -> None:
+        print('hello1')
+        breakpoint()
         if is_feature_enabled("SSH_TUNNELING") and ssh_tunnel_manager:
+            print('hello2')
             ssh_tunnel_manager.validate(self._properties)
         return
