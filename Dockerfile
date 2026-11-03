@@ -44,6 +44,7 @@ RUN npm run ${BUILD_CMD}
 # Final lean image...
 ######################################################################
 FROM python:${PY_VER} AS lean
+RUN sed -i "s|http://deb.debian.org|http://archive.debian.org|g" /etc/apt/sources.list
 
 ENV LANG=C.UTF-8 \
     LC_ALL=C.UTF-8 \
